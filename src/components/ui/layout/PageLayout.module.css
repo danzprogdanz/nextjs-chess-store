@@ -1,0 +1,13 @@
+.pageLayout {
+  margin-top: var(--navbar-height);
+  padding: 2rem;
+  min-height: calc(100vh - 80px); /* Full viewport height minus navbar */
+}
+
+@media (max-width: 768px) {
+  .pageLayout {
+    margin-top: 60px;
+    min-height: calc(100vh - 60px);
+    padding: 1rem;
+  }
+}

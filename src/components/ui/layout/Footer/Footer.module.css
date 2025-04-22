@@ -1,0 +1,123 @@
+/* components/Footer/footer.module.css */
+.footer {
+  background-color: var(--secondary-background);
+  border-top: 1px solid var(--border-color);
+  padding: var(--space-xl) var(--space-md);
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: var(--space-xl);
+  grid-template-columns: repeat(1, 1fr);
+  padding-bottom: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  min-width: 250px;
+}
+
+.heading {
+  color: var(--heading-color);
+  font-size: var(--text-lg);
+  margin: 0;
+  padding-bottom: var(--space-xs);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.text {
+  color: var(--text-color);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.link {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--heading-color);
+}
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.input {
+  padding: var(--space-xs);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: var(--text-sm);
+}
+
+.button {
+  background-color: var(--primary-button-background);
+  color: var(--primary-button-text-color);
+  padding: var(--space-xs) var(--space-sm);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: var(--text-sm);
+  transition: opacity 0.2s ease;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+.legal {
+  border-top: 1px solid var(--border-color);
+  padding-top: var(--space-md);
+}
+
+.legalContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 576px) {
+  .legalContent {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.copy {
+  color: var(--text-color);
+  font-size: var(--text-xs);
+}
+
+.legalLinks {
+  display: flex;
+  gap: var(--space-md);
+}
