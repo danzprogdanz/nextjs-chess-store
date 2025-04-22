@@ -1,4 +1,4 @@
-import styles from './Footer.module.css';
+import styles from "./Footer.module.css";
 
 const Footer = () => {
   return (
@@ -7,8 +7,13 @@ const Footer = () => {
         <div className={styles.section}>
           <h4 className={styles.heading}>About Us</h4>
           <p className={styles.text}>
-            Discover the finest selection of products curated just for you.
-            Quality meets convenience in every purchase.
+            This is a portfolio project developed by Daniel Viana as a
+            demonstration of his skills in design, development, and
+            problem-solving. It serves as an example of his technical abilities
+            and creative approach, intended for potential employers,
+            collaborators, or clients to review. Note: This is not a commercial
+            product—it was created solely for educational and portfolio
+            purposes. All rights reserved.
           </p>
         </div>
 
@@ -35,6 +40,26 @@ const Footer = () => {
                 Contact Us
               </a>
             </li>
+            <li>
+              <a
+                href="https://github.com/danzprogdanz"
+                className={styles.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Github
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/daniel-viana-a6bb59174/"
+                className={styles.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Linkedin
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -54,7 +79,7 @@ const Footer = () => {
       <div className={styles.legal}>
         <div className={styles.legalContent}>
           <span className={styles.copy}>
-            &copy; {new Date().getFullYear()} Store Name
+            &copy; {new Date().getFullYear()} Danz’s Castle & Crown
           </span>
           <div className={styles.legalLinks}>
             <a href="/privacy" className={styles.link}>
