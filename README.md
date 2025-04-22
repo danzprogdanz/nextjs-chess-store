@@ -1,0 +1,1 @@
+# nextjs-chess-store
