@@ -1,0 +1,93 @@
+/* QuantitySelector.module.css (updated) */
+.quantitySelector {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border-color-darker);
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: var(--background);
+  transition: all 0.2s ease;
+  max-height: 2rem;
+
+  @media (min-width: 576px) {
+    /* Your CSS rules for sm breakpoint */
+  }
+  
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    /* Your CSS rules for md breakpoint */
+  }
+  
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+    /* Your CSS rules for lg breakpoint */
+  }
+  
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+    /* Your CSS rules for xl breakpoint */
+  }
+}
+
+.quantitySelector:focus-within {
+  box-shadow: 0 0 0 2px rgba(10, 47, 88, 0.2);
+  border-color: var(--primary-button-background);
+}
+
+.quantityButton {
+  width: 32px;
+  height: 32px;
+  min-width: auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: var(--secondary-button-background);
+  color: var(--secondary-button-text-color);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quantityButton:hover:not(:disabled) {
+  background-color: var(--border-color);
+  color: var(--text-color);
+}
+
+.quantityButton:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.quantityButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--secondary-background);
+}
+
+.quantityInput {
+  width: 40px;
+  height: 32px;
+  padding: var(--space-xxs);
+  text-align: center;
+  border: none;
+  border-left: 1px solid var(--border-color-darker);
+  border-right: 1px solid var(--border-color-darker);
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--text-color);
+  background-color: var(--background);
+  -moz-appearance: textfield;
+}
+
+.quantityInput::-webkit-outer-spin-button,
+.quantityInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.quantityInput:focus {
+  outline: none;
+  background-color: var(--secondary-background);
+}

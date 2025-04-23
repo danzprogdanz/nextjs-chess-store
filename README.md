@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ♟️ Next.js Chess Store
 
-## Getting Started
+*A premium e-commerce experience for chess enthusiasts*
 
-First, run the development server:
+## 🏁 Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Next.js Chess Store is a modern, performant e-commerce platform dedicated to chess equipment. Browse beautifully crafted chess pieces, boards, and accessories with a seamless shopping experience built on Next.js and React.
+
+## ✨ Features
+
+- **Modern UI/UX**: Clean, responsive design with elegant typography
+- **Interactive Product Showcase**: Product carousels and detailed cards
+- **Shopping Cart**: Persistent cart functionality with quantity controls
+- **Wishlist**: Save favorite items for later
+- **Performance Optimized**: Built with Next.js for fast page loads
+- **State Management**: Redux Toolkit for predictable state
+- **Type Safety**: Full TypeScript support
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Styling**: CSS Modules
+- **State Management**: Redux Toolkit + Redux Persist
+- **Type Checking**: TypeScript
+- **Linting**: ESLint
+- **Testing**: (Coming soon)
+
+## 🏗️ Project Structure
+
+```
+nextjs-chess-store/
+├── app/               # Next.js app router
+├── components/        # Reusable UI components (atomic design)
+├── hooks/             # Custom React hooks
+├── mocks/             # Mock data
+├── services/          # API services
+├── store/             # Redux store configuration
+├── types/             # TypeScript type definitions
+├── public/            # Static assets
+└── utils/             # Utility functions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
+- Node.js (v18+ recommended)
+- npm (v9+ recommended)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/nextjs-chess-store.git
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-## Learn More
+### Available Scripts
+- `npm run dev`: Starts the development server
+- `npm run build`: Creates a production build
+- `npm start`: Starts the production server
+- `npm run lint`: Runs ESLint
 
-To learn more about Next.js, take a look at the following resources:
+## 🧩 Component Architecture
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project follows Atomic Design principles:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Atoms**: Basic UI elements (Buttons, Icons, Inputs)
+- **Molecules**: Simple component groups
+- **Organisms**: Complex UI sections (HeroBanner)
+- **Templates**: Page layouts
+- **Pages**: Complete views
 
-## Deploy on Vercel
+## 📦 State Management
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Redux Toolkit powers the shopping cart and wishlist functionality with:
+- Cart slice for managing items
+- Persistence via redux-persist
+- Custom hooks (useCart) for easy consumption
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🎨 Design System
+
+Key design elements:
+- Custom chess-themed icons (King, Pawn, etc.)
+- Responsive layouts with CSS Modules
+- Elegant typography with custom font (Americana Serif)
+
+## 🤝 Contributing
+
+Contributions are welcome! Please open an issue first to discuss proposed changes.
+
+---
+
+♚ Checkmate your shopping experience with Next.js Chess Store ♛

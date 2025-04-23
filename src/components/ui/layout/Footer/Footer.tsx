@@ -1,3 +1,5 @@
+import Button from "../../atoms/Button/Button";
+import Input from "../../atoms/Input/Input";
 import styles from "./Footer.module.css";
 
 const Footer = () => {
@@ -66,12 +68,11 @@ const Footer = () => {
         <div className={styles.section}>
           <h4 className={styles.heading}>Stay Connected</h4>
           <div className={styles.newsletter}>
-            <input
+            <Input
               type="email"
               placeholder="Enter your email"
-              className={styles.input}
             />
-            <button className={styles.button}>Subscribe</button>
+            <Button>Subscribe</Button>
           </div>
         </div>
       </div>

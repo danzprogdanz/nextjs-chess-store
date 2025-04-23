@@ -1,0 +1,67 @@
+/* components/Banner.module.css */
+.banner {
+  position: relative;
+  height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1505461296292-7d67beed10a2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+}
+
+.content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--background);
+  padding: var(--space-xl);
+}
+
+.title {
+  font-size: var(--text-xxl);
+  margin-bottom: var(--space-md);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-lg);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+}
+
+.ctaButton {
+  background-color: var(--primary-button-background);
+  color: var(--primary-button-text-color);
+  padding: var(--space-sm) var(--space-xl);
+  border: none;
+  border-radius: 4px;
+  font-size: var(--text-lg);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+}
+
+.transparentNav {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  position: absolute;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: var(--text-xl);
+  }
+
+  .subtitle {
+    font-size: var(--text-lg);
+  }
+}

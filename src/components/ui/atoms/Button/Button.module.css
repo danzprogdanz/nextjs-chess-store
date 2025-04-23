@@ -1,0 +1,120 @@
+.button {
+  --button-bg: var(--primary-button-background);
+  --button-text: var(--primary-button-text-color);
+  --button-hover-bg: #0c3a6d;
+  --button-active-bg: #09274a;
+  --button-disabled-bg: #9ba5ae;
+  
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 4px;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  gap: var(--space-xs);
+  white-space: nowrap;
+  max-height: 2rem;
+}
+
+/* Variants */
+.button.variant-primary {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+}
+
+.button.variant-secondary {
+  --button-bg: var(--secondary-button-background);
+  --button-text: var(--secondary-button-text-color);
+  --button-hover-bg: #e0e0e0;
+  --button-active-bg: #d0d0d0;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: 1px solid var(--border-color-darker);
+}
+
+.button.variant-critical {
+  --button-bg: var(--error-color);
+  --button-text: #ffffff;
+  --button-hover-bg: #e04a50;
+  --button-active-bg: #c24046;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+}
+
+/* Sizes */
+.button.size-small {
+  padding: var(--space-xxs) var(--space-xs);
+  font-size: var(--text-xs);
+  min-height: 32px;
+}
+
+.button.size-medium {
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--text-sm);
+  min-height: 40px;
+}
+
+.button.size-large {
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--text-base);
+  min-height: 48px;
+}
+
+/* States */
+.button:hover:not(:disabled) {
+  background-color: var(--button-hover-bg);
+}
+
+.button:active:not(:disabled) {
+  background-color: var(--button-active-bg);
+  transform: translateY(1px);
+}
+
+.button:disabled {
+  background-color: var(--button-disabled-bg);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Full width */
+.button.fullWidth {
+  width: 100%;
+}
+
+/* Loading state */
+.button.loading .content,
+.button.loading .iconLeft,
+.button.loading .iconRight {
+  visibility: hidden;
+}
+
+.loader {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--button-text);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Icon positioning */
+.iconLeft {
+  display: inline-flex;
+  margin-right: var(--space-xxs);
+}
+
+.iconRight {
+  display: inline-flex;
+  margin-left: var(--space-xxs);
+}
