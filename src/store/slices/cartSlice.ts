@@ -1,14 +1,29 @@
-// slices/cartSlice.ts
 import { Product } from '@/mocks/productMock';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface CartItem {
+// Define a simplified product interface for cart items
+interface CartProduct {
+  id: string;
+  title: string;
+  price: {
+    amount: number;
+    currency: string;
+  };
+  images: Array<{
+    url: string;
+    altText?: string;
+  }>;
+  createdAt?: string; // Only if you really need this
+}
+
+export interface CartItem {
   productId: string;
   sku?: string;
   quantity: number;
   price: number;
   title: string;
   mainImage: string;
+  createdAt?: string; // Optional, only if needed
 }
 
 interface CartState {
@@ -23,30 +38,30 @@ const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    addToCart: (
-      state,
-      action: PayloadAction<{
-        product: Product;
-        sku?: string;
-        quantity?: number;
-      }>
-    ) => {
-      const { product, sku, quantity = 1 } = action.payload;
+    addToCart: (state, action: PayloadAction<{ product: CartProduct; sku?: string }>) => {
+      const { product, sku } = action.payload;
       const existingItem = state.items.find(
         (item) => item.productId === product.id && item.sku === sku
       );
 
       if (existingItem) {
-        existingItem.quantity += quantity;
+        existingItem.quantity += 1;
       } else {
-        state.items.push({
+        const newItem: CartItem = {
           productId: product.id,
           sku: sku,
-          quantity: quantity,
+          quantity: 1,
           price: product.price.amount,
           title: product.title,
-          mainImage: product.images[0].url,
-        });
+          mainImage: product.images[0]?.url || '',
+        };
+
+        // Only add createdAt if it exists and you need it
+        if (product.createdAt) {
+          newItem.createdAt = product.createdAt;
+        }
+
+        state.items.push(newItem);
       }
     },
     removeFromCart: (
@@ -56,8 +71,7 @@ const cartSlice = createSlice({
       state.items = state.items.filter(
         (item) =>
           !(
-            item.productId === action.payload.productId &&
-            item.sku === action.payload.sku
+            item.productId === action.payload.productId
           )
       );
     },
@@ -71,8 +85,7 @@ const cartSlice = createSlice({
     ) => {
       const item = state.items.find(
         (item) =>
-          item.productId === action.payload.productId &&
-          item.sku === action.payload.sku
+          item.productId === action.payload.productId
       );
       if (item) {
         item.quantity = action.payload.quantity;
