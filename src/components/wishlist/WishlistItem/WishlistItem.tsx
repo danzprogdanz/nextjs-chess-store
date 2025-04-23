@@ -4,6 +4,7 @@ import styles from './WishlistItem.module.css';
 import Button from '@/components/ui/atoms/Button/Button';
 import AddToCartButton from '@/components/cart/AddToCartButton/AddToCartButton';
 import { WishlistItem as WishlistItemType } from '@/store/slices/wishlistSlice';
+import Image from 'next/image';
 
 interface WishlistItemProps {
   item: WishlistItemType;

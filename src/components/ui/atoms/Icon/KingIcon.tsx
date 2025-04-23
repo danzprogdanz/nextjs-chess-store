@@ -1,10 +1,13 @@
 import React from 'react';
 
-interface KingIconProps extends React.SVGProps<SVGSVGElement> {}
+interface KingIconProps extends React.SVGProps<SVGSVGElement> {
+  fill?: string,
+  width?: string,
+  height?: string,
+}
 
 const KingIcon: React.FC<KingIconProps> = ({
   fill = '#030104',
-  stroke = 'black',
   width = '2em',
   height = '2em',
   ...props

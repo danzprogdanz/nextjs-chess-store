@@ -25,7 +25,6 @@ const CartSideBarHeader = ({ count }: { count: number }) => (
 const CartSideBar: React.FC<CartSideBarProps> = ({
   isVisible,
   onClose,
-  children,
 }) => {
   const cartItems = useAppSelector((state) => state.cart.items);
   const { removeItem, updateItemQuantity, clearCart } = useCart();

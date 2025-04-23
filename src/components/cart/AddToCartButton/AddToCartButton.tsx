@@ -1,7 +1,7 @@
 import Button from "@/components/ui/atoms/Button/Button";
 import { Product } from "@/mocks/productMock";
 import { mockProducts } from "@/mocks/productMock";
-import { addToCart, CartItem } from "@/store/slices/cartSlice";
+import { addToCart } from "@/store/slices/cartSlice";
 import { useAppDispatch, useAppSelector } from "@/store/store";
 import React from "react";
 

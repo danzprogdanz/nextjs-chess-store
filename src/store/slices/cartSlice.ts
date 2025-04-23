@@ -1,4 +1,3 @@
-import { Product } from '@/mocks/productMock';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 // Define a simplified product interface for cart items
