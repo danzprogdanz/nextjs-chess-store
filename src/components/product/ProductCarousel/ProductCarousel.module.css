@@ -1,0 +1,143 @@
+.carouselWrapper {
+  padding: var(--space-lg) 0;
+  position: relative;
+}
+
+.sectionTitle {
+  color: var(--heading-color);
+  font-size: var(--text-xxl);
+  margin-bottom: var(--space-md);
+  text-align: center;
+}
+
+.carouselContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  position: relative;
+  flex-direction: row;
+}
+
+.cardsContainer {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  position: relative;
+  flex-direction: row;
+}
+
+.cardWrapper {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navigationButton {
+  background: var(--secondary-background);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: none;
+
+  @media (min-width: 576px) {
+    /* Your CSS rules for sm breakpoint */
+  }
+  
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    /* Your CSS rules for md breakpoint */
+  }
+  
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+    display: block;
+  }
+  
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+    /* Your CSS rules for xl breakpoint */
+  }
+}
+
+.navigationButton:hover {
+  background: var(--primary-button-background);
+  color: var(--primary-button-text-color);
+}
+
+.paginationDots {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border-color);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.activeDot {
+  background: var(--heading-color);
+  transform: scale(1.2);
+}
+
+@media (min-width: 768px) {
+  .cardWrapper {
+    grid-auto-columns: calc(50% - var(--space-md));
+  }
+
+  .navigationButton {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .cardWrapper {
+    grid-auto-columns: calc(33.333% - var(--space-md));
+  }
+}
+
+.cardsContainer {
+  touch-action: pan-y; /* Prevent vertical scroll while swiping horizontally */
+  user-select: none; /* Prevent text selection during drag */
+  height: 60vh;
+
+  @media (min-width: 576px) {
+    /* Your CSS rules for sm breakpoint */
+  }
+  
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    /* Your CSS rules for md breakpoint */
+  }
+  
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+    /* Your CSS rules for lg breakpoint */
+  }
+  
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+    /* Your CSS rules for xl breakpoint */
+  }
+}
+
+.cardWrapper {
+  will-change: transform; /* Hint for better performance */
+  height: 60vh;
+}

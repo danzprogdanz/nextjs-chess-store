@@ -1,0 +1,81 @@
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.background.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80vw;
+  height: 100vh;
+  background-color: var(--root-background);
+  backdrop-filter: blur(8px);
+  transition: right 0.3s ease-in-out;
+  z-index: 100000;
+
+  @media (min-width: 576px) {
+    /* Your CSS rules for sm breakpoint */
+  }
+  
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    width: 70vw;
+  }
+  
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+    width: 50vw;
+  }
+  
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+    width: 30vw;
+  }
+}
+
+.overlay.visible {
+  right: 0;
+}
+
+.header {
+  width: 100%;
+  padding: 1rem 0rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 3px solid rgba(128, 128, 128, 0.164);
+}
+
+.headerContainer {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
