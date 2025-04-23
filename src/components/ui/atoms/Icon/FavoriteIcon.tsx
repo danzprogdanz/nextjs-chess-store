@@ -1,6 +1,11 @@
 import React from 'react';
 
-interface FavoriteIconProps extends React.SVGProps<SVGSVGElement> {}
+interface FavoriteIconProps extends React.SVGProps<SVGSVGElement> {
+  fill?: string,
+  stroke?: string,
+  width?: string,
+  height?: string
+}
 
 const FavoriteIcon: React.FC<FavoriteIconProps> = ({
   fill = 'none',

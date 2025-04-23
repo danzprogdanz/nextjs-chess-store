@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import styles from "./ProductCard.module.css";
@@ -13,20 +13,18 @@ interface ProductCardProps {
 
 function ProductTitle({ product }: { product: Product }) {
   const [expanded, setExpanded] = useState(false);
-  
+
   return (
     <div className={styles.titleContainer}>
-      <h3 className={`${styles.title} ${expanded ? styles.expanded : ''}`}>
-        <Link href={`/products/${product.id}`}>
-          {product.title}
-        </Link>
+      <h3 className={`${styles.title} ${expanded ? styles.expanded : ""}`}>
+        <Link href={`/products/${product.id}`}>{product.title}</Link>
       </h3>
       {product.title.length > 50 && (
-        <button 
+        <button
           onClick={() => setExpanded(!expanded)}
           className={styles.toggleButton}
         >
-          {expanded ? 'Show Less' : 'Show More'}
+          {expanded ? "Show Less" : "Show More"}
         </button>
       )}
     </div>
@@ -50,7 +48,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
       </div>
 
       <div className={styles.content}>
-        <ProductTitle product={product}/>
+        <ProductTitle product={product} />
         <div className={styles.priceContainer}>
           {product.price.originalAmount && (
             <span className={styles.originalPrice}>

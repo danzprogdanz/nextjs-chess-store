@@ -8,8 +8,6 @@ import CartIcon from "@/components/ui/atoms/Icon/CartIcon";
 import KingIcon from "@/components/ui/atoms/Icon/KingIcon";
 import { useAppSelector } from "@/store/store";
 import IconButton from "../../atoms/IconButton/IconButton";
-import { useCart } from "@/hooks/useCart";
-import Overlay from "../../atoms/Overlay/Overlay";
 import CartSideBar from "@/components/cart/CartSideBar/CartSideBar";
 import WishlistSideBar from "@/components/wishlist/WishlistSiderBar/WishlistSideBar";
 
@@ -20,14 +18,8 @@ const Navbar = () => {
   const [isWishListCardOpen, setIsWishListCardOpen] = useState(false);
 
   const cartItems = useAppSelector((state) => state.cart.items);
-  const { removeItem, updateItemQuantity } = useCart();
 
   const wishListItems = useAppSelector((state) => state.wishlist.items);
-
-  const total = cartItems.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
-  );
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
@@ -69,7 +61,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link href="/" className={styles.logo} onClick={closeMenu}>
           <KingIcon />
-          <p className={styles.companyNameLogo}>Danz's Castle & Crown</p>
+          <p className={styles.companyNameLogo}>Danz&apos;s Castle & Crown</p>
         </Link>
 
         {/* Mobile Icons - shown only on mobile */}

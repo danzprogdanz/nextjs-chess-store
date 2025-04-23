@@ -1,5 +1,4 @@
 import HeroBanner from "@/components/ui/organism/HeroBanner/HeroBanner";
-import styles from "../components/ui/layout/PageLayout.module.css";
 import ProductCarousel from "@/components/product/ProductCarousel/ProductCarousel";
 import { mockProducts } from "@/mocks/productMock";
 import { Suspense } from "react";
