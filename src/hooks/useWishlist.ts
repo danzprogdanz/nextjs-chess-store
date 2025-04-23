@@ -1,13 +1,13 @@
 import { Product } from '@/mocks/productMock';
-import { addToCart, clearCart, removeFromCart, updateQuantity } from '@/store/slices/cartSlice';
+import { addToWishlist, removeFromWishlist, clearWishlist } from '@/store/slices/wishlistSlice';
 import { useAppDispatch } from '@/store/store';
 
-export const useCart = () => {
+export const useWishlist = () => {
   const dispatch = useAppDispatch();
 
-  const addItem = (product: Product, sku?: string) => {
+  const addItem = (product: Product) => {
     // Create a serializable version of the product
-    const cartProduct = {
+    const wishlistProduct = {
       id: product.id,
       title: product.title,
       price: {
@@ -26,32 +26,22 @@ export const useCart = () => {
           : undefined,
     };
 
-    dispatch(addToCart({
-      product: cartProduct,
-      sku
+    dispatch(addToWishlist({
+      product: wishlistProduct
     }));
   };
 
-  const removeItem = (productId: string, sku?: string) => {
-    dispatch(removeFromCart({ productId, sku }));
-  };
-
-  const updateItemQuantity = (productId: string, quantity: number, sku?: string) => {
-    if (quantity < 1) {
-      removeItem(productId, sku);
-    } else {
-      dispatch(updateQuantity({ productId, quantity, sku }));
-    }
+  const removeItem = (productId: string) => {
+    dispatch(removeFromWishlist({ productId }));
   };
 
   const clearAllItems = () => {
-    dispatch(clearCart());
+    dispatch(clearWishlist());
   };
 
   return {
     addItem,
     removeItem,
-    updateItemQuantity,
-    clearCart: clearAllItems,
+    clearWishlist: clearAllItems,
   };
 };
