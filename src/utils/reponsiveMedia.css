@@ -1,0 +1,61 @@
+/* Extra small devices (portrait phones, less than 576px) */
+/* No media query since this is the default in mobile-first approach */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  /* Your CSS rules for sm breakpoint */
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  /* Your CSS rules for md breakpoint */
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  /* Your CSS rules for lg breakpoint */
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  /* Your CSS rules for xl breakpoint */
+}
+
+/* You can also create max-width queries if needed: */
+
+/* Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  /* Your CSS rules for xs breakpoint */
+}
+
+/* Medium devices (tablets, less than 768px) */
+@media (max-width: 767.98px) {
+  /* Your CSS rules for sm and below */
+}
+
+/* Large devices (desktops, less than 992px) */
+@media (max-width: 991.98px) {
+  /* Your CSS rules for md and below */
+}
+
+/* Extra large devices (large desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+  /* Your CSS rules for lg and below */
+}
+
+/* For ranges between breakpoints: */
+
+/* Between small and medium (576px - 767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* Your CSS rules for sm only */
+}
+
+/* Between medium and large (768px - 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* Your CSS rules for md only */
+}
+
+/* Between large and xlarge (992px - 1199.98px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* Your CSS rules for lg only */
+}
