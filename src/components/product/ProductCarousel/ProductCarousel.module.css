@@ -115,7 +115,7 @@
 .cardsContainer {
   touch-action: pan-y; /* Prevent vertical scroll while swiping horizontally */
   user-select: none; /* Prevent text selection during drag */
-  height: 60vh;
+  height: 70vh;
 
   @media (min-width: 576px) {
     /* Your CSS rules for sm breakpoint */

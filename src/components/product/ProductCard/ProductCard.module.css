@@ -9,8 +9,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
 
   @media (min-width: 576px) {
     /* Your CSS rules for sm breakpoint */
