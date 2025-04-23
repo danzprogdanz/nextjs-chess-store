@@ -1,0 +1,108 @@
+/* CartItem.module.css */
+.cartItem {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--border-color);
+
+  @media (min-width: 576px) {
+    /* Your CSS rules for sm breakpoint */
+  }
+  
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    /* Your CSS rules for md breakpoint */
+  }
+  
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+    /* Your CSS rules for lg breakpoint */
+  }
+  
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+    /* Your CSS rules for xl breakpoint */
+  }
+}
+
+.imageContainer {
+  flex-shrink: 0;
+
+}
+
+.image {
+  border-radius: 4px;
+  object-fit: cover;
+  height: 5rem;
+  width: 5rem;
+
+  @media (min-width: 576px) {
+    /* Your CSS rules for sm breakpoint */
+  }
+  
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    /* Your CSS rules for md breakpoint */
+  }
+  
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+
+  }
+  
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+    /* Your CSS rules for xl breakpoint */
+  }
+}
+
+.details {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin: 0 0 var(--space-xs) 0;
+  font-size: var(--text-base);
+  color: var(--text-color);
+}
+
+.price {
+  font-weight: bold;
+  color: var(--heading-color);
+  margin-bottom: var(--space-sm);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: auto;
+  flex-direction: column;
+
+  @media (min-width: 576px) {
+    /* Your CSS rules for sm breakpoint */
+  }
+  
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+  
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+    /* Your CSS rules for lg breakpoint */
+  }
+  
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+    /* Your CSS rules for xl breakpoint */
+  }
+}
+
+.removeButton {
+  color: var(--error-color);
+  padding: 0;
+}
