@@ -559,6 +559,443 @@ const generateMockProducts = (): Product[] => [
     updatedAt: new Date('2024-03-18'),
     tags: ['art', 'sculpture', 'limited-edition'],
   },
+  {
+    id: 'chess_007',
+    sku: 'STAUN-TRAVEL',
+    title: 'Staunton Travel Chess Set',
+    price: {
+      amount: 89.99,
+      currency: 'USD',
+      formatted: '$89.99',
+      originalAmount: 109.99,
+      discountPercentage: 18,
+    },
+    images: [
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/621411fc3d8105c34c94ab3e_ZiziD_purlingProductImages_1-p-500.png',
+        altText: 'Compact travel chess set with Staunton pieces',
+        type: 'main',
+        width: 1200,
+        height: 800,
+      },
+    ],
+    description: 'Magnetic Staunton pieces with foldable board for travel',
+    technicalInfo: {
+      specifications: [
+        {
+          category: 'Design',
+          properties: [
+            { name: 'Pieces Material', value: 'Weighted Plastic' },
+            { name: 'Board Material', value: 'Leatherette' },
+            { name: 'King Height', value: '2.5', unit: 'inches' },
+            { name: 'Magnetic', value: 'Yes' },
+          ],
+        },
+      ],
+      features: [
+        {
+          title: 'Portable Design',
+          description: 'All pieces store securely in compact folding board',
+          icon: 'travel',
+        },
+      ],
+    },
+    inventory: {
+      stock: 42,
+      lowStockThreshold: 10,
+      available: true,
+    },
+    shipping: {
+      freeShipping: true,
+      estimatedDelivery: '3-5 business days',
+      shipsFrom: 'Chicago, IL',
+      returnPolicy: {
+        days: 30,
+        details: 'Standard return policy applies',
+      },
+    },
+    category: [
+      {
+        id: 'cat_classic',
+        name: 'Classic Chess Sets',
+        path: 'games/chess/classic',
+      },
+      {
+        id: 'cat_travel',
+        name: 'Travel Chess',
+        path: 'games/chess/travel',
+      },
+    ],
+    brand: {
+      id: 'brand_regal',
+      name: 'Regal Chess Co.',
+      logo: '/logos/regal-chess.png',
+    },
+    createdAt: new Date('2023-09-15'),
+    updatedAt: new Date('2024-02-28'),
+    tags: ['travel', 'magnetic', 'compact'],
+  },
+
+  // Luxury Chess Sets
+  {
+    id: 'chess_008',
+    sku: 'LUX-GOLD',
+    title: '24K Gold Plated Chess Set',
+    price: {
+      amount: 4999.99,
+      currency: 'USD',
+      formatted: '$4,999.99',
+    },
+    images: [
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/64999ac31edcaba25029dde2_DSC_5786_knights.jpg',
+        altText: 'Luxury gold plated chess set with crystal pieces',
+        type: 'main',
+        width: 1200,
+        height: 800,
+      },
+    ],
+    description: 'Exclusive limited edition chess set with 24K gold plating',
+    technicalInfo: {
+      specifications: [
+        {
+          category: 'Materials',
+          properties: [
+            { name: 'White Pieces', value: '24K Gold Plated Brass' },
+            { name: 'Black Pieces', value: 'Rhodium Plated Brass' },
+            { name: 'Board', value: 'Italian Marble with Gold Inlay' },
+          ],
+        },
+      ],
+      features: [
+        {
+          title: 'Collector\'s Edition',
+          description: 'Numbered certificate of authenticity included',
+          icon: 'certificate',
+        },
+      ],
+    },
+    inventory: {
+      stock: 2,
+      lowStockThreshold: 1,
+      available: true,
+    },
+    shipping: {
+      freeShipping: true,
+      estimatedDelivery: 'By appointment only',
+      shipsFrom: 'Zurich, Switzerland',
+      returnPolicy: {
+        days: 7,
+        details: 'Special handling required - insurance mandatory',
+      },
+    },
+    category: [
+      {
+        id: 'cat_luxury',
+        name: 'Luxury Chess Sets',
+        path: 'games/chess/luxury',
+      },
+    ],
+    brand: {
+      id: 'brand_royalchess',
+      name: 'Royal Chess Collections',
+      logo: '/logos/royal-chess.png',
+    },
+    createdAt: new Date('2024-01-05'),
+    updatedAt: new Date('2024-03-30'),
+    tags: ['luxury', 'gold', 'limited-edition'],
+  },
+
+  // Themed Chess Sets
+  {
+    id: 'chess_009',
+    sku: 'THEME-LOTR',
+    title: 'Lord of the Rings Chess Set',
+    price: {
+      amount: 249.99,
+      currency: 'USD',
+      formatted: '$249.99',
+    },
+    images: [
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/64999ac31edcaba25029dde2_DSC_5786_knights.jpg',
+        altText: 'Lord of the Rings themed chess set',
+        type: 'main',
+        width: 1200,
+        height: 800,
+      },
+    ],
+    description: 'Officially licensed Lord of the Rings character chess pieces',
+    technicalInfo: {
+      specifications: [
+        {
+          category: 'Design',
+          properties: [
+            { name: 'Material', value: 'Polystone Resin' },
+            { name: 'King Height', value: '4.5', unit: 'inches' },
+            { name: 'License', value: 'Official Middle-earth Enterprises' },
+          ],
+        },
+      ],
+      features: [
+        {
+          title: 'Character Pieces',
+          description: 'Gandalf vs Sauron as kings, with full fellowship',
+          icon: 'fantasy',
+        },
+      ],
+    },
+    inventory: {
+      stock: 18,
+      lowStockThreshold: 5,
+      available: true,
+    },
+    shipping: {
+      freeShipping: true,
+      estimatedDelivery: '5-7 business days',
+      shipsFrom: 'Austin, TX',
+      returnPolicy: {
+        days: 30,
+        details: 'Standard return policy applies',
+      },
+    },
+    category: [
+      {
+        id: 'cat_themed',
+        name: 'Themed Chess Sets',
+        path: 'games/chess/themed',
+      },
+    ],
+    brand: {
+      id: 'brand_geekchess',
+      name: 'Geek Chess Collectibles',
+      logo: '/logos/geek-chess.png',
+    },
+    createdAt: new Date('2023-11-20'),
+    updatedAt: new Date('2024-03-12'),
+    tags: ['lotr', 'fantasy', 'licensed'],
+  },
+
+  // Electronic Chess Sets
+  {
+    id: 'chess_010',
+    sku: 'ELECT-DGT',
+    title: 'DGT Centaur Electronic Chess Board',
+    price: {
+      amount: 399.99,
+      currency: 'USD',
+      formatted: '$399.99',
+    },
+    images: [
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/64999ac31edcaba25029dde2_DSC_5786_knights.jpg',
+        altText: 'Electronic chess board with LED display',
+        type: 'main',
+        width: 1200,
+        height: 800,
+      },
+    ],
+    description: 'Smart chess board with built-in AI opponent and training modes',
+    technicalInfo: {
+      specifications: [
+        {
+          category: 'Technical',
+          properties: [
+            { name: 'Board Type', value: 'Electronic with LED' },
+            { name: 'Skill Levels', value: '20 difficulty settings' },
+            { name: 'Battery Life', value: '15', unit: 'hours' },
+          ],
+        },
+      ],
+      features: [
+        {
+          title: 'Adaptive AI',
+          description: 'Learns your playing style and adjusts difficulty',
+          icon: 'ai',
+        },
+      ],
+    },
+    inventory: {
+      stock: 22,
+      lowStockThreshold: 5,
+      available: true,
+    },
+    shipping: {
+      freeShipping: true,
+      estimatedDelivery: '2-4 business days',
+      shipsFrom: 'Eindhoven, Netherlands',
+      returnPolicy: {
+        days: 30,
+        details: 'Free returns within 30 days',
+      },
+    },
+    category: [
+      {
+        id: 'cat_electronic',
+        name: 'Electronic Chess',
+        path: 'games/chess/electronic',
+      },
+    ],
+    brand: {
+      id: 'brand_dgt',
+      name: 'Digital Game Technology',
+      logo: '/logos/dgt.png',
+    },
+    createdAt: new Date('2023-10-10'),
+    updatedAt: new Date('2024-03-22'),
+    tags: ['electronic', 'smart', 'training'],
+  },
+
+  // Chess Set + Board Combos
+  {
+    id: 'chess_011',
+    sku: 'COMBO-WAL',
+    title: 'Walnut Chess Set & Board Combo',
+    price: {
+      amount: 349.99,
+      currency: 'USD',
+      formatted: '$349.99',
+      originalAmount: 399.99,
+      discountPercentage: 12,
+    },
+    images: [
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/64999ac31edcaba25029dde2_DSC_5786_knights.jpg',
+        altText: 'Walnut chess set with matching board',
+        type: 'main',
+        width: 1200,
+        height: 800,
+      },
+    ],
+    description: 'Premium walnut and maple chess set with matching 21" board',
+    technicalInfo: {
+      specifications: [
+        {
+          category: 'Materials',
+          properties: [
+            { name: 'Pieces Material', value: 'Walnut & Maple' },
+            { name: 'Board Material', value: 'Walnut & Maple' },
+            { name: 'Square Size', value: '2.25', unit: 'inches' },
+          ],
+        },
+      ],
+      features: [
+        {
+          title: 'Matching Set',
+          description: 'Pieces perfectly complement the board colors',
+          icon: 'combo',
+        },
+      ],
+    },
+    inventory: {
+      stock: 9,
+      lowStockThreshold: 2,
+      available: true,
+      skus: [
+        { code: 'COMBO-WAL-21', size: '21"', stock: 6 },
+        { code: 'COMBO-WAL-18', size: '18"', stock: 3 },
+      ],
+    },
+    shipping: {
+      freeShipping: true,
+      estimatedDelivery: '7-10 business days',
+      shipsFrom: 'Portland, OR',
+      returnPolicy: {
+        days: 30,
+        details: 'Free returns for unused sets',
+      },
+    },
+    category: [
+      {
+        id: 'cat_classic',
+        name: 'Classic Chess Sets',
+        path: 'games/chess/classic',
+      },
+      {
+        id: 'cat_combos',
+        name: 'Chess Combos',
+        path: 'games/chess/combos',
+      },
+    ],
+    brand: {
+      id: 'brand_chesscraft',
+      name: 'ChessCraft Woodworks',
+      logo: '/logos/chesscraft.png',
+    },
+    createdAt: new Date('2023-12-15'),
+    updatedAt: new Date('2024-03-05'),
+    tags: ['wood', 'combo', 'tournament'],
+  },
+
+  // Budget Chess Sets
+  {
+    id: 'chess_012',
+    sku: 'BASIC-PLAST',
+    title: 'Beginner Plastic Chess Set',
+    price: {
+      amount: 19.99,
+      currency: 'USD',
+      formatted: '$19.99',
+    },
+    images: [
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/64999ac31edcaba25029dde2_DSC_5786_knights.jpg',
+        altText: 'Basic plastic chess set for beginners',
+        type: 'main',
+        width: 1200,
+        height: 800,
+      },
+    ],
+    description: 'Affordable starter chess set with roll-up vinyl board',
+    technicalInfo: {
+      specifications: [
+        {
+          category: 'Design',
+          properties: [
+            { name: 'Pieces Material', value: 'Durable Plastic' },
+            { name: 'Board Material', value: 'Vinyl' },
+            { name: 'King Height', value: '3', unit: 'inches' },
+          ],
+        },
+      ],
+      features: [
+        {
+          title: 'Beginner Friendly',
+          description: 'Perfect for learning the game',
+          icon: 'beginner',
+        },
+      ],
+    },
+    inventory: {
+      stock: 127,
+      lowStockThreshold: 20,
+      available: true,
+    },
+    shipping: {
+      freeShipping: false,
+      estimatedDelivery: '3-7 business days',
+      shipsFrom: 'Multiple US locations',
+      returnPolicy: {
+        days: 30,
+        details: 'Standard return policy applies',
+      },
+    },
+    category: [
+      {
+        id: 'cat_beginner',
+        name: 'Beginner Chess',
+        path: 'games/chess/beginner',
+      },
+    ],
+    brand: {
+      id: 'brand_chessbasics',
+      name: 'Chess Basics',
+      logo: '/logos/chess-basics.png',
+    },
+    createdAt: new Date('2023-05-01'),
+    updatedAt: new Date('2024-03-01'),
+    tags: ['beginner', 'plastic', 'budget'],
+  },
 ];
 
 // Utility functions remain similar with type updates

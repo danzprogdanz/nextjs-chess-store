@@ -4,7 +4,7 @@
   border: 1px solid var(--border-color);
   overflow: hidden;
   transition: transform 0.2s ease;
-  width: 14rem;
+  width: 30vh;
   height: 60vh;
   display: flex;
   flex-direction: column;
@@ -13,23 +13,26 @@
   margin-bottom: 2rem;
 
   @media (min-width: 576px) {
-    /* Your CSS rules for sm breakpoint */
+    width: 36vw;
+    height: 60vh;
   }
   
   /* Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) {
-    width: 16rem;
-    height: 50vh;
+    width: 28vw;
+    height: 60vh;
   }
   
   /* Large devices (desktops, 992px and up) */
   @media (min-width: 992px) {
-    /* Your CSS rules for lg breakpoint */
+    width: 20vw;
+    height: 60vh;
   }
   
   /* Extra large devices (large desktops, 1200px and up) */
   @media (min-width: 1200px) {
-    /* Your CSS rules for xl breakpoint */
+    width: 16vw;
+    height: 56vh;
   }
 }
 
