@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import styles from "./ProductCard.module.css";
-import { Product } from "@/mocks/productMock";
 import AddToCartButton from "@/components/cart/AddToCartButton/AddToCartButton";
 import { AddToWishlistButton } from "@/components/wishlist/AddToWishlistButton/AddToWishlistButton";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation"; // Changed import
+import { Product } from "@/types/product.type";
 
 interface ProductCardProps {
   product: Product;
@@ -13,11 +14,22 @@ interface ProductCardProps {
 
 function ProductTitle({ product }: { product: Product }) {
   const [expanded, setExpanded] = useState(false);
+  const router = useRouter(); // Now using App Router's useRouter
+
+  useEffect(() => {
+    console.log('product', product)
+  }, [product])
 
   return (
     <div className={styles.titleContainer}>
       <h3 className={`${styles.title} ${expanded ? styles.expanded : ""}`}>
-        <Link href={`/products/${product.id}`}>{product.title}</Link>
+        <Link
+          href={`/products/${product.slug}`}
+          prefetch={false}
+          onMouseEnter={() => router.prefetch(`/products/${product.slug}`)}
+        >
+          {product.title}
+        </Link>
       </h3>
       {product.title.length > 50 && (
         <button
