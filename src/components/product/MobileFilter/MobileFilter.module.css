@@ -1,0 +1,47 @@
+/* src/components/product/MobileFilter.module.css */
+.filterButton {
+  position: fixed;
+  bottom: 5rem;
+  right: 1rem;
+  z-index: 20;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filterDrawer {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background-color: white;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.filterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.filterTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.closeButton {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.applyButton {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .filterButton {
+    display: none;
+  }
+}
