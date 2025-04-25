@@ -1,9 +1,10 @@
 import Button from "@/components/ui/atoms/Button/Button";
-import { Product } from "@/mocks/productMock";
 import { mockProducts } from "@/mocks/productMock";
 import { addToCart } from "@/store/slices/cartSlice";
 import { useAppDispatch, useAppSelector } from "@/store/store";
 import React from "react";
+import styles from './AddToCartButton.module.css';
+import { Product } from "@/types/product.type";
 
 type AddToCartButtonProps = {
   product?: Product;
@@ -52,9 +53,9 @@ const AddToCartButton = ({ product, productId, size }: AddToCartButtonProps) => 
   if (!resolvedProduct) return null;
   
   return (
-    <div className="add-to-cart-container">
+    <div className={styles.addToCartButtonWrapper}>
       {isInCart ? (
-        <span className="already-in-cart">Already in cart</span>
+        <span className={styles.alreadyInCarMsg}>Already in cart</span>
       ) : (
         <Button onClick={handleAddToCart} size={size ?? 'medium'}>
           Add to Cart
