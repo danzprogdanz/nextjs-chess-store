@@ -1,0 +1,10 @@
+
+.addToCartButtonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alreadyInCarMsg {
+  font-weight: 600;
+}

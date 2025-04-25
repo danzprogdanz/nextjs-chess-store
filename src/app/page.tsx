@@ -9,10 +9,32 @@ export default async function HomePage() {
     <div>
       <HeroBanner />
       <Suspense fallback={<LoadingSpinner />}>
-        <ProductCarousel products={mockProducts} title="Best Sellers" />
+        <ProductCarousel
+          products={mockProducts}
+          title="Best Sellers"
+          options={{
+            align: "start",
+            containScroll: "trimSnaps",
+            breakpoints: {
+              "(min-width: 768px)": { slidesToScroll: 2 },
+              "(min-width: 992px)": { slidesToScroll: 3 },
+            },
+          }}
+        />
       </Suspense>
       <Suspense fallback={<LoadingSpinner />}>
-        <ProductCarousel products={mockProducts} title="Discount" />
+        <ProductCarousel
+          products={mockProducts}
+          title="Discount"
+          options={{
+            align: "start",
+            containScroll: "trimSnaps",
+            breakpoints: {
+              "(min-width: 768px)": { slidesToScroll: 2 },
+              "(min-width: 992px)": { slidesToScroll: 3 },
+            },
+          }}
+        />
       </Suspense>
     </div>
   );

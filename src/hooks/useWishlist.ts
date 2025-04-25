@@ -1,6 +1,6 @@
-import { Product } from '@/mocks/productMock';
 import { addToWishlist, removeFromWishlist, clearWishlist } from '@/store/slices/wishlistSlice';
 import { useAppDispatch } from '@/store/store';
+import { Product } from '@/types/product.type';
 
 export const useWishlist = () => {
   const dispatch = useAppDispatch();

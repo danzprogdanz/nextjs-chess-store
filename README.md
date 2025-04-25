@@ -49,7 +49,7 @@ nextjs-chess-store/
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/nextjs-chess-store.git
+   git clone https://github.com/danzprogdanz/nextjs-chess-store.git
    ```
 2. Install dependencies:
    ```bash
