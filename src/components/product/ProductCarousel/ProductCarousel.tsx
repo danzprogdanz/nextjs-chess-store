@@ -5,8 +5,8 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { DotButton, useDotButton } from './EmblaCarouselDotButton';
 import { PrevButton, NextButton, usePrevNextButtons } from './EmblaCarouselArrowButtons';
 import ProductCard from '../ProductCard/ProductCard';
-import { Product } from '@/mocks/productMock';
 import styles from './ProductCarousel.module.css';
+import { Product } from '@/types/product.type';
 
 type ProductCarouselProps = {
   products: Product[];

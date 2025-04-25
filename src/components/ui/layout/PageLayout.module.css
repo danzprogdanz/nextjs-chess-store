@@ -1,5 +1,5 @@
 .pageLayout {
-  margin-top: var(--navbar-height);
+  margin: var(--navbar-height) 5vw;
   padding: 2rem;
   min-height: calc(100vh - 80px); /* Full viewport height minus navbar */
 }

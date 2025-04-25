@@ -1,120 +1,4 @@
-// lib/mockData.ts
-
-interface RatingStatistics {
-  average: number;
-  total: number;
-  breakdown: {
-    1: number;
-    2: number;
-    3: number;
-    4: number;
-    5: number;
-  };
-}
-
-export interface Product {
-  id: string;
-  sku: string;
-  title: string;
-  price: {
-    amount: number;
-    currency: string;
-    formatted: string;
-    originalAmount?: number;
-    discountPercentage?: number;
-  };
-  images: Array<{
-    url: string;
-    altText: string;
-    type: 'main' | 'gallery' | 'thumbnail';
-    width: number;
-    height: number;
-  }>;
-  description: string;
-  technicalInfo: {
-    specifications: Array<{
-      category: string;
-      properties: Array<{
-        name: string;
-        value: string;
-        unit?: string;
-        icon?: string;
-      }>;
-    }>;
-    features: Array<{
-      title: string;
-      description: string;
-      icon: string;
-    }>;
-  };
-  ratings?: {
-    statistics: RatingStatistics;
-    reviews: Array<{
-      id: string;
-      user: {
-        id: string;
-        name: string;
-        avatar?: string;
-      };
-      rating: 1 | 2 | 3 | 4 | 5;
-      title?: string;
-      comment: string;
-      likes: number;
-      dislikes: number;
-      verifiedPurchase: boolean;
-      date: Date;
-      attachments?: Array<{
-        type: 'image' | 'video';
-        url: string;
-      }>;
-    }>;
-  };
-  inventory: {
-    stock: number;
-    lowStockThreshold: number;
-    available: boolean;
-    skus?: Array<{
-      code: string;
-      size?: string;
-      color?: string;
-      stock: number;
-    }>;
-  };
-  shipping: {
-    freeShipping: boolean;
-    estimatedDelivery: string;
-    shipsFrom: string;
-    returnPolicy: {
-      days: number;
-      details: string;
-    };
-  };
-  category: Array<{
-    id: string;
-    name: string;
-    path: string;
-  }>;
-  brand: {
-    id: string;
-    name: string;
-    logo: string;
-  };
-  createdAt: Date;
-  updatedAt: Date;
-  tags: string[];
-}
-
-export interface ProductListingResponse {
-  data: Product[];
-  total: number;
-  limit: number;
-  skip: number;
-}
-
-export interface ProductDetailResponse {
-  data: Product;
-  relatedProducts: Product[];
-}
+import { Product, ProductDetailResponse, ProductListingResponse } from "@/types/product.type";
 
 const generateMockProducts = (): Product[] => [
   // Staunton Style Chess Sets
@@ -122,6 +6,7 @@ const generateMockProducts = (): Product[] => [
     id: 'chess_001',
     sku: 'STAUN-ROSE',
     title: 'Classic Staunton Rosewood Chess Set',
+    slug: 'classic-staunton-rosewood-chess-set',
     price: {
       amount: 299.99,
       currency: 'USD',
@@ -138,8 +23,29 @@ const generateMockProducts = (): Product[] => [
         height: 800,
       },
       {
-        url: '/images/staunton-rose-board.jpg',
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/661fb49675b049b1f0f1b4e8_Hero_Banner_ZsokaGaal.jpg',
         altText: 'Chess board detail',
+        type: 'gallery',
+        width: 800,
+        height: 600,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/661fb49675b049b1f0f1b4e8_Hero_Banner_ZsokaGaal.jpg',
+        altText: 'Chess board detail',
+        type: 'gallery',
+        width: 800,
+        height: 600,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/661fb49675b049b1f0f1b4e8_Hero_Banner_ZsokaGaal.jpg',
+        altText: 'Chess board detail',
+        type: 'gallery',
+        width: 800,
+        height: 600,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/621411fc3d8105c34c94ab3e_ZiziD_purlingProductImages_1-p-500.png',
+        altText: 'Classic Staunton chess set with rosewood pieces',
         type: 'gallery',
         width: 800,
         height: 600,
@@ -211,6 +117,7 @@ const generateMockProducts = (): Product[] => [
     id: 'chess_002',
     sku: 'STAUN-OBSID',
     title: 'Obsidian Staunton Chess Set',
+    slug: 'obsidian-staunton-chess-set',
     price: {
       amount: 459.99,
       currency: 'USD',
@@ -223,6 +130,34 @@ const generateMockProducts = (): Product[] => [
         type: 'main',
         width: 1200,
         height: 800,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/661fb49675b049b1f0f1b4e8_Hero_Banner_ZsokaGaal.jpg',
+        altText: 'Chess board detail',
+        type: 'gallery',
+        width: 800,
+        height: 600,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/661fb49675b049b1f0f1b4e8_Hero_Banner_ZsokaGaal.jpg',
+        altText: 'Chess board detail',
+        type: 'gallery',
+        width: 800,
+        height: 600,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/661fb49675b049b1f0f1b4e8_Hero_Banner_ZsokaGaal.jpg',
+        altText: 'Chess board detail',
+        type: 'gallery',
+        width: 800,
+        height: 600,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/661fb49675b049b1f0f1b4e8_Hero_Banner_ZsokaGaal.jpg',
+        altText: 'Chess board detail',
+        type: 'gallery',
+        width: 800,
+        height: 600,
       },
     ],
     description:
@@ -282,6 +217,7 @@ const generateMockProducts = (): Product[] => [
     id: 'chess_003',
     sku: 'LEWIS-WALRUS',
     title: 'Lewis Chessmen Reproduction Set',
+    slug: 'lewis-chessmen-reproduction-set',
     price: {
       amount: 899.99,
       currency: 'USD',
@@ -292,6 +228,27 @@ const generateMockProducts = (): Product[] => [
         url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/621411fc3d8105c34c94ab3e_ZiziD_purlingProductImages_1-p-500.png',
         altText: 'Authentic Lewis chessmen reproduction',
         type: 'main',
+        width: 1200,
+        height: 800,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/64999ac31edcaba25029dde2_DSC_5786_knights.jpg',
+        altText: 'Walnut chess set with matching board',
+        type: 'gallery',
+        width: 1200,
+        height: 800,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/64999ac31edcaba25029dde2_DSC_5786_knights.jpg',
+        altText: 'Walnut chess set with matching board',
+        type: 'gallery',
+        width: 1200,
+        height: 800,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/64999ac31edcaba25029dde2_DSC_5786_knights.jpg',
+        altText: 'Walnut chess set with matching board',
+        type: 'gallery',
         width: 1200,
         height: 800,
       },
@@ -351,6 +308,7 @@ const generateMockProducts = (): Product[] => [
     id: 'chess_004',
     sku: 'LEWIS-RESIN',
     title: 'Lewis Chessmen Collectors Edition',
+    slug: 'lewis-chessmen-collectors-edition',
     price: {
       amount: 149.99,
       currency: 'USD',
@@ -363,6 +321,34 @@ const generateMockProducts = (): Product[] => [
         type: 'main',
         width: 1200,
         height: 800,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/661fb49675b049b1f0f1b4e8_Hero_Banner_ZsokaGaal.jpg',
+        altText: 'Chess board detail',
+        type: 'gallery',
+        width: 800,
+        height: 600,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/661fb49675b049b1f0f1b4e8_Hero_Banner_ZsokaGaal.jpg',
+        altText: 'Chess board detail',
+        type: 'gallery',
+        width: 800,
+        height: 600,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/661fb49675b049b1f0f1b4e8_Hero_Banner_ZsokaGaal.jpg',
+        altText: 'Chess board detail',
+        type: 'gallery',
+        width: 800,
+        height: 600,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/661fb49675b049b1f0f1b4e8_Hero_Banner_ZsokaGaal.jpg',
+        altText: 'Chess board detail',
+        type: 'gallery',
+        width: 800,
+        height: 600,
       },
     ],
     description:
@@ -421,6 +407,7 @@ const generateMockProducts = (): Product[] => [
     id: 'chess_005',
     sku: 'MOD-CARBON',
     title: 'Carbon Fiber Contemporary Chess Set',
+    slug: 'carbon-fiber-contemporary-chess-set',
     price: {
       amount: 649.99,
       currency: 'USD',
@@ -433,6 +420,34 @@ const generateMockProducts = (): Product[] => [
         type: 'main',
         width: 1200,
         height: 800,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/661fb49675b049b1f0f1b4e8_Hero_Banner_ZsokaGaal.jpg',
+        altText: 'Chess board detail',
+        type: 'gallery',
+        width: 800,
+        height: 600,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/661fb49675b049b1f0f1b4e8_Hero_Banner_ZsokaGaal.jpg',
+        altText: 'Chess board detail',
+        type: 'gallery',
+        width: 800,
+        height: 600,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/661fb49675b049b1f0f1b4e8_Hero_Banner_ZsokaGaal.jpg',
+        altText: 'Chess board detail',
+        type: 'gallery',
+        width: 800,
+        height: 600,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/661fb49675b049b1f0f1b4e8_Hero_Banner_ZsokaGaal.jpg',
+        altText: 'Chess board detail',
+        type: 'gallery',
+        width: 800,
+        height: 600,
       },
     ],
     description:
@@ -494,6 +509,7 @@ const generateMockProducts = (): Product[] => [
     id: 'chess_006',
     sku: 'MOD-SCULPT',
     title: 'Abstract Sculptural Chess Set',
+    slug: 'abstract-sculptural-chess-set',
     price: {
       amount: 799.99,
       currency: 'USD',
@@ -506,6 +522,34 @@ const generateMockProducts = (): Product[] => [
         type: 'main',
         width: 1200,
         height: 800,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/661fb49675b049b1f0f1b4e8_Hero_Banner_ZsokaGaal.jpg',
+        altText: 'Chess board detail',
+        type: 'gallery',
+        width: 800,
+        height: 600,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/661fb49675b049b1f0f1b4e8_Hero_Banner_ZsokaGaal.jpg',
+        altText: 'Chess board detail',
+        type: 'gallery',
+        width: 800,
+        height: 600,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/661fb49675b049b1f0f1b4e8_Hero_Banner_ZsokaGaal.jpg',
+        altText: 'Chess board detail',
+        type: 'gallery',
+        width: 800,
+        height: 600,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/661fb49675b049b1f0f1b4e8_Hero_Banner_ZsokaGaal.jpg',
+        altText: 'Chess board detail',
+        type: 'gallery',
+        width: 800,
+        height: 600,
       },
     ],
     description:
@@ -563,6 +607,7 @@ const generateMockProducts = (): Product[] => [
     id: 'chess_007',
     sku: 'STAUN-TRAVEL',
     title: 'Staunton Travel Chess Set',
+    slug: 'staunton-travel-chess-set',
     price: {
       amount: 89.99,
       currency: 'USD',
@@ -577,6 +622,34 @@ const generateMockProducts = (): Product[] => [
         type: 'main',
         width: 1200,
         height: 800,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/661fb49675b049b1f0f1b4e8_Hero_Banner_ZsokaGaal.jpg',
+        altText: 'Chess board detail',
+        type: 'gallery',
+        width: 800,
+        height: 600,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/661fb49675b049b1f0f1b4e8_Hero_Banner_ZsokaGaal.jpg',
+        altText: 'Chess board detail',
+        type: 'gallery',
+        width: 800,
+        height: 600,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/661fb49675b049b1f0f1b4e8_Hero_Banner_ZsokaGaal.jpg',
+        altText: 'Chess board detail',
+        type: 'gallery',
+        width: 800,
+        height: 600,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/661fb49675b049b1f0f1b4e8_Hero_Banner_ZsokaGaal.jpg',
+        altText: 'Chess board detail',
+        type: 'gallery',
+        width: 800,
+        height: 600,
       },
     ],
     description: 'Magnetic Staunton pieces with foldable board for travel',
@@ -641,6 +714,7 @@ const generateMockProducts = (): Product[] => [
     id: 'chess_008',
     sku: 'LUX-GOLD',
     title: '24K Gold Plated Chess Set',
+    slug: '24k-gold-plated-chess-set',
     price: {
       amount: 4999.99,
       currency: 'USD',
@@ -711,6 +785,7 @@ const generateMockProducts = (): Product[] => [
     id: 'chess_009',
     sku: 'THEME-LOTR',
     title: 'Lord of the Rings Chess Set',
+    slug: 'lord-of-the-rings-chess-set',
     price: {
       amount: 249.99,
       currency: 'USD',
@@ -781,6 +856,7 @@ const generateMockProducts = (): Product[] => [
     id: 'chess_010',
     sku: 'ELECT-DGT',
     title: 'DGT Centaur Electronic Chess Board',
+    slug: 'dgt-centaur-electronic-chess-board',
     price: {
       amount: 399.99,
       currency: 'USD',
@@ -851,6 +927,7 @@ const generateMockProducts = (): Product[] => [
     id: 'chess_011',
     sku: 'COMBO-WAL',
     title: 'Walnut Chess Set & Board Combo',
+    slug: 'walnut-chess-set-and-board-combo',
     price: {
       amount: 349.99,
       currency: 'USD',
@@ -932,6 +1009,7 @@ const generateMockProducts = (): Product[] => [
     id: 'chess_012',
     sku: 'BASIC-PLAST',
     title: 'Beginner Plastic Chess Set',
+    slug: 'beginner-plastic-chess-set',
     price: {
       amount: 19.99,
       currency: 'USD',
@@ -995,7 +1073,7 @@ const generateMockProducts = (): Product[] => [
     createdAt: new Date('2023-05-01'),
     updatedAt: new Date('2024-03-01'),
     tags: ['beginner', 'plastic', 'budget'],
-  },
+  }
 ];
 
 // Utility functions remain similar with type updates
@@ -1015,9 +1093,9 @@ export const getProductBySlug = async (
   slug: string
 ): Promise<ProductDetailResponse> => {
   await simulateDelay();
-  const product = mockProducts.find((p) =>
-    p.title.toLowerCase().includes(slug)
-  );
+  
+  // Find product by exact slug match
+  const product = mockProducts.find((p) => p.slug === slug);
 
   if (!product) {
     throw new Error('Product not found');
@@ -1026,12 +1104,14 @@ export const getProductBySlug = async (
   return {
     data: product,
     relatedProducts: mockProducts
-      .filter((p) => p.id !== product.id)
+      .filter((p) => p.id !== product.id && p.category.some(c => 
+        product.category.some(pc => pc.id === c.id)
+      )) // Added missing closing parenthesis here
       .slice(0, 3),
   };
 };
 
 const simulateDelay = () =>
   new Promise((resolve) =>
-    setTimeout(resolve, process.env.NODE_ENV === 'test' ? 0 : 1000)
+    setTimeout(resolve, process.env.NODE_ENV === 'test' ? 0 : 10)
   );

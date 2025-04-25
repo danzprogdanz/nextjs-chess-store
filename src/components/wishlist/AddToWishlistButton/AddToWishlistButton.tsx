@@ -1,8 +1,8 @@
 import { useWishlist } from '@/hooks/useWishlist';
-import { Product } from '@/mocks/productMock';
 import Button from '@/components/ui/atoms/Button/Button';
 import FavoriteIcon from '@/components/ui/atoms/Icon/FavoriteIcon';
 import { useAppSelector } from '@/store/store';
+import { Product } from '@/types/product.type';
 
 interface AddToWishlistButtonProps {
   product: Product;
