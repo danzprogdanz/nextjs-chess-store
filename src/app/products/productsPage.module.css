@@ -1,0 +1,50 @@
+/* src/app/products/productsPage.module.css */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.productPageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  width: 100%;
+  align-items: center;
+}
+
+.filters {
+  width: 40vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.products {
+  display: flex;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  /* Your CSS rules for sm breakpoint */
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  /* Your CSS rules for md breakpoint */
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .productPageContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    width: 100%;
+    align-items: flex-start;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  /* Your CSS rules for xl breakpoint */
+}
