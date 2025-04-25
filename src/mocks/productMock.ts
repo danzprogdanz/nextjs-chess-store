@@ -295,6 +295,27 @@ const generateMockProducts = (): Product[] => [
         width: 1200,
         height: 800,
       },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/64999ac31edcaba25029dde2_DSC_5786_knights.jpg',
+        altText: 'Walnut chess set with matching board',
+        type: 'gallery',
+        width: 1200,
+        height: 800,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/64999ac31edcaba25029dde2_DSC_5786_knights.jpg',
+        altText: 'Walnut chess set with matching board',
+        type: 'gallery',
+        width: 1200,
+        height: 800,
+      },
+      {
+        url: 'https://cdn.prod.website-files.com/61814bf39b15bff782136dd5/64999ac31edcaba25029dde2_DSC_5786_knights.jpg',
+        altText: 'Walnut chess set with matching board',
+        type: 'gallery',
+        width: 1200,
+        height: 800,
+      },
     ],
     description:
       'Museum-quality reproduction of the 12th-century Lewis chessmen in walrus ivory',
@@ -1015,8 +1036,12 @@ export const getProductBySlug = async (
   slug: string
 ): Promise<ProductDetailResponse> => {
   await simulateDelay();
+  
+  // Create a slug-friendly version for comparison
+  const formattedSlug = slug.replace(/-/g, ' ');
+  
   const product = mockProducts.find((p) =>
-    p.title.toLowerCase().includes(slug)
+    p.title.toLowerCase().includes(formattedSlug)
   );
 
   if (!product) {
@@ -1026,12 +1051,14 @@ export const getProductBySlug = async (
   return {
     data: product,
     relatedProducts: mockProducts
-      .filter((p) => p.id !== product.id)
+      .filter((p) => p.id !== product.id && p.category.some(c => 
+        product.category.some(pc => pc.id === c.id)
+      ))
       .slice(0, 3),
   };
 };
 
 const simulateDelay = () =>
   new Promise((resolve) =>
-    setTimeout(resolve, process.env.NODE_ENV === 'test' ? 0 : 1000)
+    setTimeout(resolve, process.env.NODE_ENV === 'test' ? 0 : 10)
   );
