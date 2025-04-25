@@ -1,8 +1,8 @@
 "use client"
 import AddToCartButton from '@/components/cart/AddToCartButton/AddToCartButton';
 import { AddToWishlistButton } from '@/components/wishlist/AddToWishlistButton/AddToWishlistButton';
-import { Product } from '@/mocks/productMock';
 import styles from './MobileActions.module.css';
+import { Product } from '@/types/product.type';
 
 interface MobileActionsProps {
   product: Product;

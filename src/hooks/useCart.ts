@@ -1,6 +1,6 @@
-import { Product } from '@/mocks/productMock';
 import { addToCart, clearCart, removeFromCart, updateQuantity } from '@/store/slices/cartSlice';
 import { useAppDispatch } from '@/store/store';
+import { Product } from '@/types/product.type';
 
 export const useCart = () => {
   const dispatch = useAppDispatch();

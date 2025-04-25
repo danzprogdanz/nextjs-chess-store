@@ -1,4 +1,4 @@
-import { Product } from "@/mocks/productMock";
+import { Product } from "../product.type";
 
 export type VTEXProductResponse<T extends Product = Product> = {
   data: T;

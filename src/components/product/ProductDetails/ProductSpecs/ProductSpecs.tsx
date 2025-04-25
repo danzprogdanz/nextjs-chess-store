@@ -1,5 +1,5 @@
 // src/components/product/ProductDetails/ProductSpecs/ProductSpecs.tsx
-import { Product } from '@/mocks/productMock';
+import { Product } from '@/types/product.type';
 import styles from './ProductSpecs.module.css';
 
 interface ProductSpecsProps {
