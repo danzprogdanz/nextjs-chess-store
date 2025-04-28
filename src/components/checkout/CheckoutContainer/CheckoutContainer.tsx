@@ -1,12 +1,9 @@
 "use client"
 import React from 'react';
 import { useAppSelector } from '@/store/store';
-import CartStep from '../Steps/CartStep/CartStep';
 import ShippingStep from '../Steps/ShippingStep/ShippingStep';
 import PaymentStep from '../Steps/PaymentStep/PaymentStep';
 import ConfirmationStep from '../Steps/ConfirmationStep/ConfirmationStep';
-//import CheckoutProgress from '../CheckoutProgress/CheckoutProgress';
-//import OrderSummary from '../OrderSummary/OrderSummary';
 import styles from './CheckoutContainer.module.css';
 import OrderSummary from '../OrderSummary/OrderSummary';
 import CheckoutProgress from '../CheckoutProgress/CheckoutProgress';
