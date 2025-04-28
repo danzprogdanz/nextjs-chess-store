@@ -2,6 +2,8 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import cartReducer from './slices/cartSlice';
 import wishlistReducer from './slices/wishlistSlice';
+import checkoutReducer from './slices/checkoutSlice';
+
 import {
   persistStore,
   persistReducer,
@@ -23,6 +25,7 @@ const rootPersistConfig = {
 const rootReducer = combineReducers({
   cart: cartReducer,
   wishlist: wishlistReducer,
+  checkout: checkoutReducer
 });
 
 const persistedReducer = persistReducer(rootPersistConfig, rootReducer);
