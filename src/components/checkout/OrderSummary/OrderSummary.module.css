@@ -16,6 +16,7 @@
     gap: var(--space-md);
     max-height: 300px;
     overflow-y: auto;
+    overflow-x: hidden;
     padding-right: var(--space-xs);
 }
 
