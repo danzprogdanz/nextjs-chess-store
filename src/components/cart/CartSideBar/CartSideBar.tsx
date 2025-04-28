@@ -1,10 +1,13 @@
+"use client"
 import React from "react";
+import { useRouter } from "next/navigation";
 import styles from "./CartSideBar.module.css";
 import { useAppSelector } from "@/store/store";
 import { useCart } from "@/hooks/useCart";
 import Overlay, { OverlayProps } from "@/components/ui/atoms/Overlay/Overlay";
 import CartItem from "../CartItem/CartItem";
 import Button from "@/components/ui/atoms/Button/Button";
+import { useCheckout } from "@/hooks/useCheckout";
 
 interface CartSideBarProps extends OverlayProps {
   onClose: () => void;
@@ -28,16 +31,19 @@ const CartSideBar: React.FC<CartSideBarProps> = ({
 }) => {
   const cartItems = useAppSelector((state) => state.cart.items);
   const { removeItem, updateItemQuantity, clearCart } = useCart();
+  const { startCheckout } = useCheckout();
 
   const totalPrice = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
   );
 
+  const router = useRouter();
+
   const handleCheckout = () => {
-    // Implement checkout logic
-    console.log("Proceeding to checkout");
-    onClose();
+    startCheckout()
+    onClose(); 
+    router.push("/checkout"); 
   };
 
   return (
