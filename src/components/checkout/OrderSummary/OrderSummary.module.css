@@ -24,6 +24,13 @@
     gap: var(--space-sm);
     padding-bottom: var(--space-sm);
     border-bottom: 1px solid var(--border-color);
+    flex-direction: column;
+
+  
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+  
 }
 
 .itemImageWrapper {
