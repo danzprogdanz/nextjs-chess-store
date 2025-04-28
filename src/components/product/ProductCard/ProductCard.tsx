@@ -16,10 +16,6 @@ function ProductTitle({ product }: { product: Product }) {
   const [expanded, setExpanded] = useState(false);
   const router = useRouter(); // Now using App Router's useRouter
 
-  useEffect(() => {
-    console.log('product', product)
-  }, [product])
-
   return (
     <div className={styles.titleContainer}>
       <h3 className={`${styles.title} ${expanded ? styles.expanded : ""}`}>
