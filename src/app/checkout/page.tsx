@@ -1,6 +1,5 @@
 'use client';
-import React, { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import React from "react";
 import pageLayoutStyles from '../../components/ui/layout/PageLayout.module.css';
 import styles from './checkout.module.css';
 import CheckoutContainer from '@/components/checkout/CheckoutContainer/CheckoutContainer';
@@ -8,14 +7,6 @@ import Head from 'next/head';
 import { useAppSelector } from "@/store/store";
 
 export default function CheckoutPage() {
-  const { items } = useAppSelector((state) => state.cart);
-  const router = useRouter();
-
-  useEffect(() => {
-    if (items.length === 0) {
-      router.push("/"); 
-    }
-  }, [items])
 
   return (
     <>

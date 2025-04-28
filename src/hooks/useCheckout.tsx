@@ -17,17 +17,17 @@ const mockPaymentMethods: PaymentMethod[] = [
   {
     id: 'creditCard',
     name: 'Credit Card',
-    icon: '/icons/credit-card.svg'
+    icon: 'https://www.svgrepo.com/show/146677/credit-card.svg'
   },
   {
     id: 'paypal',
     name: 'PayPal',
-    icon: '/icons/paypal.svg'
+    icon: 'https://www.svgrepo.com/show/328122/paypal.svg'
   },
   {
     id: 'bankTransfer',
     name: 'Bank Transfer',
-    icon: '/icons/bank-transfer.svg'
+    icon: 'https://www.svgrepo.com/show/266135/bank-transfer.svg'
   }
 ];
 

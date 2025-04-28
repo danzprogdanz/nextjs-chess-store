@@ -2,8 +2,8 @@
 import React from 'react';
 import { useAppSelector, useAppDispatch } from '@/store/store';
 import styles from './PaymentStep.module.css';
-import { useCheckout } from '@/hooks/useCheckout';
 import Button from '@/components/ui/atoms/Button/Button';
+import { useCheckout } from '@/hooks/useCheckout';
 
 const PaymentStep = () => {
   const { 
@@ -11,13 +11,7 @@ const PaymentStep = () => {
     selectedPaymentMethod, 
     loading 
   } = useAppSelector((state) => state.checkout);
-  const { items } = useAppSelector((state) => state.cart);
   const { placeOrder, selectPayment } = useCheckout();
-
-  const subtotal = items.reduce(
-    (sum, item) => sum + (item.price * item.quantity), 
-    0
-  );
 
   return (
     <div className={styles.paymentStep}>
