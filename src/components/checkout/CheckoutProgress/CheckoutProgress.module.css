@@ -1,0 +1,78 @@
+.progressContainer {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: var(--space-sm);
+}
+
+.progressBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    @media (min-width: 576px) {
+        /* Your CSS rules for sm breakpoint */
+      }
+      
+      /* Medium devices (tablets, 768px and up) */
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+      
+      /* Large devices (desktops, 992px and up) */
+      @media (min-width: 992px) {
+        /* Your CSS rules for lg breakpoint */
+      }
+      
+      /* Extra large devices (large desktops, 1200px and up) */
+      @media (min-width: 1200px) {
+        /* Your CSS rules for xl breakpoint */
+      }
+}
+
+.progressStep {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    color: var(--border-color-darker);
+}
+
+.progressStep.active {
+    color: var(--heading-color);
+}
+
+.stepIndicator {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+}
+
+.progressStep.active .stepIndicator {
+    background-color: var(--heading-color);
+    color: white;
+}
+
+.stepLabel {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.progressLine {
+    flex: 1;
+    height: 2px;
+    background-color: var(--border-color);
+    margin: 0 var(--space-xs);
+}
+
+.progressLine.active {
+    background-color: var(--heading-color);
+}
