@@ -1,0 +1,25 @@
+.checkoutPageContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: var(--space-xl);
+}
+
+.checkoutHeader {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: var(--space-md);
+}
+
+.checkoutTitle {
+    color: var(--heading-color);
+    font-size: var(--text-xxl);
+    margin: 0;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .checkoutPageContainer {
+        padding: var(--space-lg) var(--space-sm);
+    }
+}
