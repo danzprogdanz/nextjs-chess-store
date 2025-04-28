@@ -71,3 +71,46 @@ body {
   padding: 0 !important;
   margin: 0 !important;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--secondary-background); /* #f7f7f7 */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--border-color-darker); /* #9ba5ae */
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-color); /* #051e34 */
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color-darker) var(--secondary-background); /* thumb and track */
+}
+
+/* Smooth scrolling for the entire document */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: Style scrollbar for specific elements with overflow */
+.scrollable-container {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color-darker) var(--secondary-background);
+}
+
+.scrollable-container::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
