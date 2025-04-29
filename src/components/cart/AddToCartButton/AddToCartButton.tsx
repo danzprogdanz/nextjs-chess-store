@@ -55,9 +55,9 @@ const AddToCartButton = ({ product, productId, size }: AddToCartButtonProps) => 
   return (
     <div className={styles.addToCartButtonWrapper}>
       {isInCart ? (
-        <span className={styles.alreadyInCarMsg}>Already in cart</span>
+        <span className={styles.alreadyInCarMsg} data-testid="already-in-cart">Already in cart</span>
       ) : (
-        <Button onClick={handleAddToCart} size={size ?? 'medium'}>
+        <Button onClick={handleAddToCart} size={size ?? 'medium'} data-testid="add-to-cart-button">
           Add to Cart
         </Button>
       )}

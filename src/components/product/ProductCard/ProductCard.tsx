@@ -41,7 +41,7 @@ function ProductTitle({ product }: { product: Product }) {
 
 const ProductCard = ({ product }: ProductCardProps) => {
   return (
-    <article className={styles.card}>
+    <article className={styles.card} data-testid="product-card">
       <div className={styles.imageContainer}>
         <img
           src={product.images[0].url}
@@ -49,7 +49,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           className={styles.image}
         />
         {product.price.discountPercentage && (
-          <span className={styles.discountBadge}>
+          <span className={styles.discountBadge} data-testid="discount-badge">
             -{product.price.discountPercentage}%
           </span>
         )}
