@@ -1,22 +1,32 @@
+// cart.spec.cy.ts
 describe('Cart Functionality', () => {
   beforeEach(() => {
-    cy.visit('/products');
-    // Add test product to cart
+    cy.visit('/');
+    // Mock API responses if needed
   });
 
-  it('should update item quantity', () => {
-    cy.get('[data-testid="quantity-increase"]').click();
-    cy.get('[data-testid="quantity-value"]').should('contain', '2');
+  it('should not show count when cart is empty', () => {
+    cy.get('[data-testid="cart-item-count"]').should('not.exist');
   });
 
-  it('should remove item from cart', () => {
-    cy.get('[data-testid="remove-item"]').click();
-    cy.contains('Your cart is empty').should('be.visible');
+  it('should add product to cart', () => {
+    cy.get('[data-testid="product-card"]').first().within(() => {
+      cy.get('[data-testid="add-to-cart-button"]').click();
+      cy.get('[data-testid="already-in-cart"]').should('be.visible');
+    });
+    
+    // Verify cart count updates
+    cy.get('[data-testid="cart-item-count"]').should('contain', '1');
   });
 
   it('should persist cart between sessions', () => {
-    // Test localStorage persistence
+    // First add to cart
+    cy.get('[data-testid="add-to-cart-button"]').first().click();
+    
+    // Reload page
     cy.reload();
+    
+    // Verify cart count persists
     cy.get('[data-testid="cart-item-count"]').should('contain', '1');
   });
 });
