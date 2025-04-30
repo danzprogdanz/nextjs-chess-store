@@ -10,5 +10,5 @@ export const NotificationCount = ({ count }: NotificationCountProps) => {
     return;
   }
 
-  return <div className={styles.countCircle}>{count}</div>;
+  return <div className={styles.countCircle} data-testid="cart-item-count">{count}</div>;
 };
