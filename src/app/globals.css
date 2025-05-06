@@ -72,6 +72,11 @@ body {
   margin: 0 !important;
 }
 
+p {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;

@@ -10,6 +10,7 @@ import { useAppSelector } from "@/store/store";
 import IconButton from "../../atoms/IconButton/IconButton";
 import CartSideBar from "@/components/cart/CartSideBar/CartSideBar";
 import WishlistSideBar from "@/components/wishlist/WishlistSiderBar/WishlistSideBar";
+import NavAuth from "../../organism/NavAuth/NavAuth";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -108,6 +109,7 @@ const Navbar = () => {
           <Link href="/products" className={styles.navLink}>
             Products
           </Link>
+          <NavAuth/>
           <IconButton
             onClick={() => setIsWishListCardOpen(true)}
             count={wishListItems.length}

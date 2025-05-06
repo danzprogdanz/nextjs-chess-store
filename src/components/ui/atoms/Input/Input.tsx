@@ -2,6 +2,12 @@
 import React from 'react';
 import styles from './Input.module.css';
 
+interface ErrorObject {
+  name: string;
+  errorType: string;
+  message: string;
+}
+
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   error?: string;
@@ -9,6 +15,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   fullWidth?: boolean;
   startAdornment?: React.ReactNode;
   endAdornment?: React.ReactNode;
+  errorObjects?: ErrorObject[];
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
@@ -21,13 +28,23 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       startAdornment,
       endAdornment,
       className = '',
+      errorObjects = [],
       ...props
     },
     ref
   ) => {
+    // Find if there's an error object that matches the input name
+    const matchedError = props.name 
+      ? errorObjects.find(err => err.name === props.name)
+      : null;
+
+    // Use the matched error message if exists, otherwise use the regular error prop
+    const displayedError = matchedError ? matchedError.message : error;
+    const errorType = matchedError ? matchedError.errorType : undefined;
+
     const inputClasses = [
       styles.input,
-      error ? styles.error : '',
+      (error || matchedError) ? styles.error : '',
       startAdornment ? styles.withStartAdornment : '',
       endAdornment ? styles.withEndAdornment : '',
       fullWidth ? styles.fullWidth : '',
@@ -50,7 +67,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           <input
             ref={ref}
             className={inputClasses}
-            aria-invalid={!!error}
+            aria-invalid={!!(error || matchedError)}
             {...props}
           />
           
@@ -59,9 +76,12 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           )}
         </div>
         
-        {(error || helperText) && (
-          <div className={`${styles.message} ${error ? styles.errorMessage : ''}`}>
-            {error || helperText}
+        {(displayedError || helperText) && (
+          <div className={`${styles.message} ${displayedError ? styles.errorMessage : ''}`}>
+            {displayedError || helperText}
+            {errorType && (
+              <span className={styles.errorType}>({errorType})</span>
+            )}
           </div>
         )}
       </div>

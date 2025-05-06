@@ -64,7 +64,7 @@
 }
 
 .navLink {
-  color: var(--text-color);
+  color: var(--product-custom-label-2-text-color);
   text-decoration: none;
   font-weight: 500;
   transition: color var(--transition-speed);
@@ -73,7 +73,7 @@
 
 .navbar.scrolled .navLink,
 .navbar.scrolled .logo {
-  color: var(--primary-button-text-color);
+  color: var(--product-custom-label-2-text-color);
 }
 
 .navLink:hover {

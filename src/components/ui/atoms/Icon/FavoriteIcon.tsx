@@ -9,7 +9,7 @@ interface FavoriteIconProps extends React.SVGProps<SVGSVGElement> {
 
 const FavoriteIcon: React.FC<FavoriteIconProps> = ({
   fill = 'none',
-  stroke = '#222222',
+  stroke = '#000000',
   width = '2em',
   height = '2em',
   ...props
